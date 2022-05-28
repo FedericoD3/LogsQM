@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<script>
+</script>
+<html>
+  <head>
+	<title>
+		Pruebas de JavaScript
+	</title>
+
+	<script type="text/javascript">  
+
+	function LeerArch() 
+	{
+		// Esta función lee a una variable el contenido del archivo especificado
+		Arch="index.html.md5"
+
+fetch(Arch)
+  .then(response => response.text())
+  .then(data => {
+  	// Do something with your data
+  	console.log(data);
+  });
+
+/*		if (document.getElementById)
+		{
+			objXml = new XMLHttpRequest();
+			objXml.open("GET",Arch,false);
+			objXml.send(null);
+			Contenido = objXml.responseText
+/*			Ubic = objXml.responseText.split (",");	
+			LatPrev = Lat					// Recordar la latitud  previa antes de leer la nueva
+			LonPrev = Lon					// Recordar la longitud previa antes de leer la nueva
+			Lat = parseFloat(Ubic[0]);		// Separar la latitud y convertirla a numérico
+			Lon = parseFloat(Ubic[1]);		// Separar la longitud y convertirla a numérico
+			Pres = parseFloat(Ubic[2]);	// Separar la precisión GPS y convertirla a numérico
+			Vel = Ubic[3];					// Separar la velocidad (solo para mostrar, no hace falta convertirla a numérico)
+			Hora = Ubic[4];					// Separar la hora de la lectura del GPS
+			Desc = Ubic[5];					// Separar el resto del texto general
+*/
+			// Debug: Mostrar que cosa leyó:		
+			alert(Contenido);
+		}		
+	}
+
+	function Timer() 
+	{  		
+		setInterval(function () {LeerArch()}, 10000);	// Actualizar el mapa cada pocos segundos
+	}	
+	</script>
+	<style>
+<!--
+	body
+		{
+		font-size: 12px;
+		color: rgb(255,255,0);
+		letter-spacing: 0px;
+		line-height: 90%;
+		white-space:pre;
+		margin-top: 10px;
+		margin-left: 10px;
+		}
+	 @font-face
+		{
+		font-family: Monoespaciado;
+		src: url(VictorMono-Regular.ttf);
+		}
+	 *
+		{
+		font-family: Monoespaciado;
+		} 
+-->
+	</style>
+
+  </head>
+  <body bgcolor="103060" onload="Timer()">
+PRUEBAS JAVASCRIPT
+  </body>
+</html>
